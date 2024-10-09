@@ -3,10 +3,10 @@
 <body>
 
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
+$servername = getenv('POSTGRES_EXTERNAL_ADDRESS');
+$username = getenv('POSTGRES_USERNAME');
+$password = getenv('POSTGRES_PASSWORD');
+$dbname = getenv('POSTGRES_DATABASE');
 
 // Create connection
 $conn = new pg_connect($servername, $username, $password, $dbname);
